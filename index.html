@@ -4,9 +4,24 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<meta name="viewport" content="width=device-width">
 	<title>Shaunaq</title>
+
 </head>
 <body>
 	<img src="blackSquare.jpg" width = "55" height= "55">
-	<img src="untitledr.png" width="480">
+	<img src="untitledr.png" width="480" id="image" onclick="next()">
+
+
+	<script>
+		var i=0;
+		var images = ["untitledr.png","untitled.png","untitledb.png"];
+
+		function next(){
+			i=i+1;
+			if(i>=3){
+				i=0;
+			}
+			document.getElementById("image").src = images[i];
+		}
+	</script>
 </body>
 </html>
