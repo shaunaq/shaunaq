@@ -19,10 +19,12 @@ body{
 <body>
 	<img src="blackSquare.jpg" width = "55" height= "55">
 	<img src="untitledr.png" width="480" id="image" onclick="next()">
+	<p id="loading">Loading</p>
 
 
 	<script>
 		var i=0;
+		var x=true;
 		var images = ["untitledr.png","untitled.png","untitledb.png","untitledd.png","untitledo.png"];
 
 		function next(){
@@ -31,6 +33,11 @@ body{
 				i=0;
 			}
 			document.getElementById("image").src = images[i];
+			while(x){
+				x=document.getElementById("myImg").complete;
+				document.getElementById("loading").style.display = "block";
+			}
+			document.getElementById("loading").style.display = "none";
 		}
 	</script>
 </body>
