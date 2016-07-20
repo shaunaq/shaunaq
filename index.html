@@ -9,13 +9,11 @@
 <body>
 	<img src="blackSquare.jpg" width = "55" height= "55">
 	<img src="untitledr.png" width="480" id="image" onclick="next()">
-	<p id="loading">Loading</p>
 
 
 	<script>
 		var i=0;
 		var images = ["untitledr.png","untitled.png","untitledb.png","untitledd.png"];
-		document.getElementById("loading").onload = document.getElementById("loading").style.display = "none";
 
 		function next(){
 			i=i+1;
@@ -23,10 +21,6 @@
 				i=0;
 			}
 			document.getElementById("image").src = images[i];
-			while (!(document.getElementById("image").complete)){
-				document.getElementById("loading").style.display = "block";
-			}
-			document.getElementById("loading").style.display = "none";
 		}
 	</script>
 </body>
