@@ -17,11 +17,13 @@
 
 		function next(){
 			document.getElementById("image").src = "loading.png";
+			document.getElementById("image").width = "100"
 			i=i+1;
 			if(i>=images.length){
 				i=0;
 			}
 			document.getElementById("image").src = images[i];
+			document.getElementById("image").width = "480"
 		}
 	</script>
 </body>
