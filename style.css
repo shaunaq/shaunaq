@@ -1,27 +1,6 @@
-h1 {
-	position: fixed;
-	top: 0;
-  left: 0;
-	font-family: "Times New Roman", Times, serif;
-	line-height: 1;
-	font-size: 24px;
-	padding: 0px;
-	margin: 10px;
-}
-
-p {
-	font-family: "Times New Roman", Times, serif;
-	line-height: 1;
-	font-size: 12px;
-	padding: 0px;
-	margin: 0px;
-}
-
-section{
-	margin: 160px;
-}
-
-div{
-	height: 480px;
-	width: 480px;
+img{
+	max-width: 100%;
+	display: inline-block;
+	margin: 20px;
+	vertical-align: top;
 }
