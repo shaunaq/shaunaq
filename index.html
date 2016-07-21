@@ -27,20 +27,21 @@ p{
 </head>
 <body>
 	<img src="blackSquare.jpg" width = "55" height= "55">
-	<img src="untitledr.png" width="1292" id="image" onclick="next()" onload="done()">
+	<img src="untitledr.png" width="494" id="image" onclick="next()" onload="done()">
 	<p id="loading"></p>
 
 
 	<script>
 		var i=0;
 		var images = ["untitledr.png","untitled.png","untitledb.png","untitledd.png","untitledo.png","untitleds.png"];
-
+		var sizes = [494,494,494,799,494,1292]
 		function next(){
 			document.getElementById("loading").innerHTML = "Loading";
 			i=i+1;
 			if(i>=images.length){
 				i=0;
 			}
+			document.getElementById("image").width = sizes[i];
 			document.getElementById("image").src = images[i];
 		}
 		function done(){
