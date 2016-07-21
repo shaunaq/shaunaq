@@ -41,11 +41,12 @@ p{
 			if(i>=images.length){
 				i=0;
 			}
-			document.getElementById("image").width = sizes[i];
+			
 			document.getElementById("image").src = images[i];
 		}
 		function done(){
 			document.getElementById("loading").innerHTML = "";
+			document.getElementById("image").width = sizes[i];
 		}
 	</script>
 </body>
