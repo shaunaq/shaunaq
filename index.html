@@ -1,53 +1,102 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="viewport" content="width=device-width">
-	<title>Shaunaq</title>
-<style>
-img{
-	max-width: 89%;
-	vertical-align: top;
-	margin: 8px;
-}
-
-body{	
-	margin: 8px;
-	padding: 0px;
-}
-p{
-	position: fixed;
-	top: 8px;
-	right: 8px;
-	margin: 0px;
-	line-height: 1;
-	font-size:10px;
-	
-}
-</style>
-</head>
+    <meta name="viewport" content="width=device-width">
+        <title>Shaunaq</title>
+        <style>
+            h1{
+                font-family: serif;
+                font-size: 16px;
+                font-weight: bold;
+                letter-spacing: 1px;
+                line-height: 1;
+                margin: 0px
+            }
+        ul{
+            font-size: 12px;
+            list-style: none;
+            padding: 0px;
+            
+        }
+        img{
+            max-width: 89%;
+            vertical-align: top;
+            padding-bottom: 8px;
+            padding-right: 8px;
+        }
+        
+        <!--                body{-->
+            <!--                    margin: 8px;-->
+            <!--                    padding: 0px;-->
+            <!--                }-->
+        p{
+            position: fixed;
+            top: 8px;
+            right: 8px;
+            margin: 0px;
+            line-height: 1;
+            font-size: 10px;
+        }
+        textarea{
+            margin: 0px;
+            border: none;
+            resize: none;
+            font-size: 10px;
+        }
+        div{
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 8px;
+            margin-left: 8px;
+            
+            
+        }
+        nav{
+            display: inline-block;
+            margin-right: 55px;
+            margin-bottom: 55px;
+            margin-top: 8px;
+            margin-left: 8px;
+        }
+        
+            </style>
+        </head>
 <body>
-	<img src="blackSquare.jpg" width = "55" height= "55">
-	<img src="52B05A602069.png" width="494" id="image" onclick="next()" onload="done()">
-	<p id="loading"></p>
-
-
-	<script>
-		var i=0;
-		var images = ["52B05A602069.png","9065004126647.png","FF97971576238.png","175117602069.png","F3F7F4727039.png"];
-		var sizes = [494,646,305,494,320]
-		function next(){
-			document.getElementById("loading").innerHTML = "Loading";
-			i=i+1;
-			if(i>=images.length){
-				i=0;
-			}
-			
-			document.getElementById("image").src = images[i];
-		}
-		function done(){
-			document.getElementById("loading").innerHTML = "";
-			document.getElementById("image").width = sizes[i];
-		}
-	</script>
+    
+    <!--        <img class="square" src="blackSquare.jpg" width = "34" height= "34">-->
+    <nav>
+        <h1>shaunaq</h1>
+        <ul>
+            <li>index</li>
+            <li>contact</li>
+            </u>
+            </nav>
+    <div>
+        <img src="52B05A602069.png" width="494" id="image" onclick="next()" onload="done()">
+            <textarea id="description" readonly rows="1" cols="20"></textarea>
+            </div>
+    <p id="loading"></p>
+    
+    
+    <script>
+        var i=0;
+        var images = ["52B05A602069.png","9065004126647.png","FF97971576238.png","175117602069.png","F3F7F4727039.png"];
+        var descriptions = ["52B05A602069","9065004126647","FF97971576238","175117602069","F3F7F4727039"];
+        var sizes = [494,1292,305,494,320]
+        function next(){
+            document.getElementById("loading").innerHTML = "Loading";
+            i=i+1;
+            if(i>=images.length){
+                i=0;
+            }
+            
+            document.getElementById("image").src = images[i];
+            document.getElementById("description").innerHTML = descriptions[i];
+        }
+    function done(){
+        document.getElementById("loading").innerHTML = "";
+        document.getElementById("image").width = sizes[i];
+    }
+    </script>
 </body>
 </html>
