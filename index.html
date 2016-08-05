@@ -8,7 +8,7 @@
                 font-family: serif;
                 font-size: 16px;
                 font-weight: bold;
-                letter-spacing: 1px;
+                letter-spacing: 0px;
                 line-height: 1;
                 margin: 0px
             }
@@ -84,7 +84,7 @@
         var descriptions = ["52B05A602069","9065004126647","FF97971576238","175117602069","F3F7F4727039"];
         var sizes = [494,1292,305,494,320]
         function next(){
-            document.getElementById("loading").innerHTML = "Loading";
+            document.getElementById("description").innerHTML = "Loading";
             i=i+1;
             if(i>=images.length){
                 i=0;
@@ -94,7 +94,7 @@
             document.getElementById("description").innerHTML = descriptions[i];
         }
     function done(){
-        document.getElementById("loading").innerHTML = "";
+        document.getElementById("description").innerHTML = descriptions[i];
         document.getElementById("image").width = sizes[i];
     }
     </script>
