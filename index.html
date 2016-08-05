@@ -72,7 +72,7 @@
             </nav>
     <div>
         <img src="52B05A602069.png" width="494" id="image" onclick="next()" onload="done()">
-            <!--<p id="description"></p>-->
+        <p id="description"></p>
           
         </div>
     
@@ -90,11 +90,12 @@
             
             document.getElementById("image").src = images[i];
             document.getElementById("description").innerHTML = "Loading";
-            //document.getElementById("description").innerHTML = descriptions[i];
+            document.getElementById("description").innerHTML = descriptions[i];
         }
     function done(){
-        // document.getElementById("description").innerHTML = descriptions[i];
         document.getElementById("image").width = sizes[i];
+        document.getElementById("description").innerHTML = descriptions[i];
+        
     }
     </script>
 </body>
