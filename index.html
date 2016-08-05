@@ -38,7 +38,7 @@
             padding: 0px;
             vertical-align: top;
             font-size: 10px;
-            line-height: 0;
+            line-height: 1;
         }
         div{
             display: inline-block;
@@ -83,13 +83,13 @@
         var descriptions = ["52B05A602069","9065004126647","FF97971576238","175117602069","F3F7F4727039"];
         var sizes = [494,1292,305,494,320]
         function next(){
-            document.getElementById("description").innerHTML = "Loading";
             i=i+1;
             if(i>=images.length){
                 i=0;
             }
             
             document.getElementById("image").src = images[i];
+            document.getElementById("description").innerHTML = "Loading";
             //document.getElementById("description").innerHTML = descriptions[i];
         }
     function done(){
