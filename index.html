@@ -5,9 +5,18 @@
     <meta name="viewport" content="width=device-width">
     <title>Shaunaq</title>
     <style>
+		html{
+			height:100%;
+			box-sizing: border-box;
+		}
 		body{
+			position: relative;
+			box-sizing: border-box;
+			top: 0px;
 			margin:0px;
 			padding: 13px;
+			padding-bottom: 89px;
+			min-height: 100%;
 		}
 		header{
 			display: inline-block;
@@ -59,11 +68,13 @@
 		}
 		footer{
 			display: block;
-			position: fixed;
-			bottom: 0px;
-			left: 0px;
+			position: absolute;
+			bottom: 13px;
+			left: 13px;
 			font-family: monospace;
-			font-size: 10px;
+			background-color: white;
+			color: grey;
+			font-size: 8px;
 		}
 /*		section{*/
 /*			display: none;*/
@@ -96,7 +107,7 @@
 <!--				<li>F3F7F4727039</li>-->
 <!--			</ul>-->
 <!--		</section>-->
-<!--		<footer>This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.</footer>-->
+			<footer>This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.</footer>
 		<script>
 		var i=0;
 		var j=0;
