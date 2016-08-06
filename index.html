@@ -47,6 +47,7 @@
 			vertical-align: top;
 			padding-bottom: 8px;
 			padding-right: 8px;
+			cursor: pointer;
 		}
 		figure{
 			display: inline-block;
@@ -90,7 +91,7 @@
 <!--          <li onclick="toggleIndex()">index</li>-->
           <li><a href="mailto:qanuahs@gmail.com" target="_top">contact</a></li>
 					<li>bio</li>
-          <li onclick="loadImage(-1)">back</a></li>
+          <li onclick="loadImage(-1)">back</li>
         </ul>
       </nav>
     </header>
@@ -122,13 +123,14 @@
 			if(i<0){
 				i=images.length-1;
 			}
-		
 			document.getElementById("image").src = images[i];
+			document.getElementById("image").disabled=true;
 			document.getElementById("description").innerHTML = "Loading";
 		}
 		function done(){
 			document.getElementById("image").width = sizes[i];
 			document.getElementById("description").innerHTML = descriptions[i];
+			document.getElementById("image").disabled=false;
 		}
 //		function toggleIndex(){
 //			if(j==0){
