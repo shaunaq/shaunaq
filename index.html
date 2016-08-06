@@ -1,100 +1,127 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta name="description" content="Description not available.">
     <meta name="viewport" content="width=device-width">
-        <title>Shaunaq</title>
-        <style>
-        body{
-            padding: 8px;
-        }
-        h1{
-            font-family: serif;
-            font-size: 16px;
-            font-weight: bold;
-            letter-spacing: 0px;
-            line-height: 1;
-            margin: 0px
-        }
-        ul{
-            font-family: serif;
-            font-size: 12px;
-            list-style: none;
-            padding: 0px;
-            
-        }
-        img{
-            max-width: 100%;
-            vertical-align: top;
-            padding-bottom: 8px;
-            padding-right: 8px;
-        }
-        figcaption{
-            font-family: sans-serif;
-            display: inline-block;
-            margin: 0px;
-            padding: 0px;
-            vertical-align: top;
-            font-size: 10px;
-            line-height: 1;
-        }
-        figure{
-            display: inline-block;
-            vertical-align: top;
-            margin: 0px;
-
-            
-            
-        }
-        header{
-            display: inline-block;
-            margin-right: 55px;
-            margin-bottom: 55px;
-            margin-top: 0px;
-            margin-left: 0px;
-        }
-        
-            </style>
-        </head>
-<body>
-    
-
+    <title>Shaunaq</title>
+    <style>
+		body{
+			margin:0px;
+			padding: 13px;
+		}
+		header{
+			display: inline-block;
+			margin-right: 55px;
+			margin-bottom: 34px;
+			margin-top: 0px;
+			margin-left: 0px;
+		}
+		h1{
+			font-family: serif;
+			font-size: 16px;
+			font-weight: bold;
+			letter-spacing: 0px;
+			line-height: 1;
+			margin: 0px;
+			padding-bottom: 13px;
+		}
+		ul{
+			font-family: serif;
+			font-size: 12px;
+			list-style: none;
+			padding: 0px;
+			margin: 0px;
+			cursor: pointer;
+		}
+		img{
+			max-width: 100%;
+			vertical-align: top;
+			padding-bottom: 8px;
+			padding-right: 8px;
+		}
+		figure{
+			display: inline-block;
+			vertical-align: top;
+			margin: 0px;
+		}
+		figcaption{
+			font-family: sans-serif;
+			display: inline-block;
+			margin: 0px;
+			padding: 0px;
+			vertical-align: top;
+			font-size: 10px;
+			line-height: 1;
+		}
+		a{
+			text-decoration: none;
+			color: black;
+		}
+/*		section{*/
+/*			display: none;*/
+/*			vertical-align: top;*/
+/*		}*/
+    </style>
+  </head>
+  <body>
     <header>
-        <h1>shaunaq</h1>
-        <nav>
+      <h1>shaunaq</h1>
+      <nav>
         <ul>
-            <li>index</li>
-            <li>contact</li>
-            <li>bio</li>
-            <li>shop</li>
-            </ul>
-            </nav>
-            </header>
-    
-    <figure>
-        <img src="52B05A602069.png" width="494" id="image" onclick="next()" onload="done()">
-        <figcaption id="description"></p>
-        <figure> 
-    
-    <script>
-        var i=0;
-        var images = ["52B05A602069.png","9065004126647.png","FF97971576238.png","175117602069.png","F3F7F4727039.png"];
-        var descriptions = ["52B05A602069","9065004126647","FF97971576238","175117602069","F3F7F4727039"];
-        var sizes = [494,1292,305,494,320]
-        function next(){
-            i=i+1;
-            if(i>=images.length){
-                i=0;
-            }
-            
-            document.getElementById("image").src = images[i];
-            document.getElementById("description").innerHTML = "Loading";
-        }
-    function done(){
-        document.getElementById("image").width = sizes[i];
-        document.getElementById("description").innerHTML = descriptions[i];
-        
-    }
-    </script>
-</body>
+<!--          <li onclick="toggleIndex()">index</li>-->
+          <li><a href="mailto:qanuahs@gmail.com" target="_top">contact</a></li>
+					<li>bio</li>
+          <li onclick="loadImage(-1)">back</a></li>
+        </ul>
+      </nav>
+    </header>
+		<figure id="figure">
+      <img src="52B05A602069.png" width="494" id="image" onclick="loadImage(1)" onload="done()">
+      <figcaption id="description"></figcaption>
+    </figure>
+<!--		<section id="index">-->
+<!--			<ul>-->
+<!--				<li>52B05A602069</li>-->
+<!--				<li>9065004126647</li>-->
+<!--				<li>FF97971576238</li>-->
+<!--				<li>175117602069</li>-->
+<!--				<li>F3F7F4727039</li>-->
+<!--			</ul>-->
+<!--		</section>-->
+		<script>
+		var i=0;
+		var j=0;
+		var images = ["52B05A602069.png","9065004126647.png","FF97971576238.png","175117602069.png","F3F7F4727039.png"];
+		var descriptions = ["52B05A602069","9065004126647","FF97971576238","175117602069","F3F7F4727039"];
+		var sizes = [494,1292,305,494,320]
+		function loadImage(x){
+			i=i+x;
+			if(i>=images.length){
+					i=0;
+			}
+			if(i<0){
+				i=images.length-1;
+			}
+		
+			document.getElementById("image").src = images[i];
+			document.getElementById("description").innerHTML = "Loading";
+		}
+		function done(){
+			document.getElementById("image").width = sizes[i];
+			document.getElementById("description").innerHTML = descriptions[i];
+		}
+//		function toggleIndex(){
+//			if(j==0){
+//				document.getElementById("index").style.display = "inline-block";
+//				document.getElementById("figure").style.display = "none";
+//				j=1;
+//			}
+//			else{
+//				document.getElementById("index").style.display = "none";
+//				document.getElementById("figure").style.display = "inline-block";
+//				j=0;
+//			}
+//		}
+		</script>
+	</body>
 </html>
