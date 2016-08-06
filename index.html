@@ -124,13 +124,13 @@
 				i=images.length-1;
 			}
 			document.getElementById("image").src = images[i];
-			document.getElementById("image").disabled=true;
+			document.getElementById("figure").disabled=true;
 			document.getElementById("description").innerHTML = "Loading";
 		}
 		function done(){
 			document.getElementById("image").width = sizes[i];
 			document.getElementById("description").innerHTML = descriptions[i];
-			document.getElementById("image").disabled=false;
+			document.getElementById("figure").disabled=false;
 		}
 //		function toggleIndex(){
 //			if(j==0){
