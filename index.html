@@ -1,41 +1,40 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="description" content="Description not available.">
-    <meta name="viewport" content="width=device-width">
+	<head>
+		<meta name="description" content="Description not available.">
+		<meta name="viewport" content="width=device-width, height=device-height">
     <title>Shaunaq</title>
-    <style>
+		<style>
 		html{
-			height:100%;
-			box-sizing: border-box;
+		height:100%;
+		box-sizing: border-box;
 		}
 		body{
-			position: relative;
 			box-sizing: border-box;
-			top: 0px;
 			margin:0px;
 			padding: 13px;
 			padding-bottom: 89px;
-			min-height: 100%;
+			height: 100%;
 		}
 		header{
-			display: inline-block;
+			display: inline;
 			margin-right: 13px;
 			margin-bottom: 13px;
 			margin-top: 0px;
 			margin-left: 0px;
-      font-family: serif;
-      font-size: 13px;
-      font-weight: normal;
+			font-family: serif;
+			font-size: 13px;
+			font-weight: normal;
 			font-style: italic;
-      letter-spacing: 0px;
-      line-height: 1;
+			letter-spacing: 0px;
+			line-height: 1;
 			vertical-align: top;
 		}
 		nav{
 			display: inline-block;
 			vertical-align: top;
-      margin-right: 34px;
+			margin-right: 0px;
+			margin-bottom: 13px;
 		}
 		ul{
 			font-family: serif;
@@ -43,31 +42,40 @@
 			list-style: none;
 			padding: 0px;
 			margin: 0px;
-			cursor: pointer;
-			list-style-type: none;
 		}
 		li{
 			display: inline;
 			margin-right: 13px;
+      cursor: pointer;
 		}
-		li:hover{
-			text-decoration: underline;
-		}
+    section{
+      display: inline-block;
+      vertical-align: top;
+      font-family: serif;
+      font-size: 13px;
+    }
 		img{
+      display: block;
 			max-width: 100%;
+      max-height: 100%;
+      height: auto;
+      width: auto;
 			vertical-align: top;
-			padding-bottom: 8px;
-			padding-right: 8px;
+			padding-bottom: 0px;
+			padding-right: 0px;
 			cursor: pointer;
 		}
 		figure{
-			display: block;
-			vertical-align: top;
-			margin: 0px;
+      display: block;
+      box-sizing: border-box;
+      vertical-align: top;
+      padding-bottom: 28px;
+      margin: 0px;
+      height: 100%;
 		}
 		figcaption{
 			font-family: sans-serif;
-			display: inline-block;
+			display: block;
 			margin: 0px;
 			padding: 0px;
 			vertical-align: top;
@@ -88,74 +96,66 @@
 			color: grey;
 			font-size: 8px;
 		}
-/*		section{*/
-/*			display: none;*/
-/*			vertical-align: top;*/
-/*		}*/
-    </style>
+		</style>
   </head>
-  <body>
-    <header>shaunaq</header>
-
-      <nav>
-        <ul>
-          <li onclick="toggleIndex()">index</li>
-          <li><a href="mailto:qanuahs@gmail.com" target="_top">contact</a></li>
-					<li>bio</li>
-          <li onclick="loadImage(-1)">back</li>
-        </ul>
-      </nav>
+	<body>
+		<header>shaunaq</header>
+		
+		<nav>
+			<ul>
+<!--				<li onclick="toggleIndex()">index</li>-->
+				<li><a href="mailto:qanuahs@gmail.com" target="_top">contact</a></li>
+				<li>bio</li>
+				<li onclick="loadImage(-1)">back</li>
+			</ul>
+		</nav>
+    <section id="description">
+      hello world
+		</section>
 
 		<figure id="figure">
-      <img src="52B05A602069.png" width="494" id="image" onclick="loadImage(1)" onload="done()">
-      <figcaption id="description"></figcaption>
+			<img src="52B05A602069.png" id="image" onclick="loadImage(1)" onload="done()">
+<!--				<figcaption id="description"></figcaption>-->
     </figure>
-<!--		<section id="index">-->
-<!--			<ul>-->
-<!--				<li>52B05A602069</li>-->
-<!--				<li>9065004126647</li>-->
-<!--				<li>FF97971576238</li>-->
-<!--				<li>175117602069</li>-->
-<!--				<li>F3F7F4727039</li>-->
-<!--			</ul>-->
-<!--		</section>-->
-			<footer>This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.</footer>
+
+		<footer>This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.</footer>
 		<script>
-		var i=0;
-		var j=0;
-		var images = ["52B05A602069.png","9065004126647.png","FF97971576238.png","175117602069.png","F3F7F4727039.png"];
-		var descriptions = ["52B05A602069","9065004126647","FF97971576238","175117602069","F3F7F4727039"];
-		var sizes = [494,1292,494,494,320]
-		function loadImage(x){
-			i=i+x;
-			if(i>=images.length){
+			var i=0;
+			var j=0;
+			var images = ["52B05A602069.png","9065004126647.png","FF97971576238.png","175117602069.png","F3F7F4727039.png"];
+			var descriptions = ["52B05A602069","9065004126647","FF97971576238","175117602069","F3F7F4727039"];
+			var sizes = ["494px","1292px","494px","494px","320px"]
+			function loadImage(x){
+				i=i+x;
+				if(i>=images.length){
 					i=0;
+				}
+				if(i<0){
+					i=images.length-1;
+				}
+				document.getElementById("image").src = images[i];
+				document.getElementById("description").innerHTML = "Loading";
+        document.getElementById("figure").style.maxWidth = sizes[i];
 			}
-			if(i<0){
-				i=images.length-1;
-			}
-			document.getElementById("image").src = images[i];
-			document.getElementById("description").innerHTML = "Loading";
-		}
 		function done(){
-			document.getElementById("image").width = sizes[i];
+			document.getElementById("figure").style.maxWidth = sizes[i];
 			document.getElementById("description").innerHTML = descriptions[i];
 		}
-//		function toggleIndex(){
-//			if(j==0){
-//				document.getElementById("index").style.display = "inline-block";
-//				document.getElementById("figure").style.display = "none";
-//				j=1;
-//			}
-//			else{
-//				document.getElementById("index").style.display = "none";
-//				document.getElementById("figure").style.display = "inline-block";
-//				j=0;
-//			}
-//		}
-//https://www.facebook.com/Shaunaq-1786678534911763/
-//https://www.facebook.com/Shaunaq-1786678534911763/shop?rt=16
-//@shaunaq
-		</script>
+		//		function toggleIndex(){
+		//			if(j==0){
+		//				document.getElementById("index").style.display = "inline-block";
+		//				document.getElementById("figure").style.display = "none";
+		//				j=1;
+		//			}
+		//			else{
+		//				document.getElementById("index").style.display = "none";
+		//				document.getElementById("figure").style.display = "inline-block";
+		//				j=0;
+		//			}
+		//		}
+		//https://www.facebook.com/Shaunaq-1786678534911763/
+		//https://www.facebook.com/Shaunaq-1786678534911763/shop?rt=16
+		//@shaunaq
+			</script>
 	</body>
 </html>
